@@ -1,0 +1,18 @@
+02/02/2026
+Aula 01: Introdução Mongo
+
+1 - pesquisar Mongo
+2 - Connections (clicar no +): vai estar o local host
+3 - localhost:27017 (clicar nos ... copy connections string)
+4 - ir no vs code e clicar na folhas do Mongo
+5 - add alguma coisa
+6 - connect (colar o que foi copiado no mongo)
+6 - create New Playground
+7 - apagar tudo do javaScript.
+
+Criamos a conexão
+
+javaScript:
+
+- show databases ( para mostrar as tabelas existente)
+- use 'nome do banco' (so vai aparecer no show databases se inserir coisas no banco)
