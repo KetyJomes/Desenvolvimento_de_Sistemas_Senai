@@ -37,3 +37,24 @@ nos ... clicar em drop e colocar o nome da tabela que quer excluir.
     salary: 4321
 
 }])(insertMany para mais de um dado)
+5 - let pessoa = {
+    name: 'Ketlyn',
+    lastname: "Sofia",
+    salary: 2000
+}
+
+db.people.insertOne(pessoa) (inserido dados com uma variável)
+6 - const arrpeople = [
+{
+    name: 'Cesar',
+    lastname: 'Stati',
+    salary: 9999
+},
+{
+    name: 'Nicolas',
+    lastname: 'Marques',
+    salary: 2651
+}
+]
+
+db.people.insertMany(arrpeople) (inserido dados com um array)
