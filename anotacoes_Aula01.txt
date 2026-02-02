@@ -1,0 +1,39 @@
+02/02/2026
+Aula 01: Introdução Mongo
+
+Mongo: Armazenar dados.
+
+1 - pesquisar Mongo
+2 - Connections (clicar no +): vai estar o local host
+3 - localhost:27017 (clicar nos ... copy connections string)
+4 - ir no vs code e clicar na folhas do Mongo
+5 - add alguma coisa
+6 - connect (colar o que foi copiado no mongo)
+6 - create New Playground
+7 - apagar tudo do javaScript.
+
+Criamos a conexão
+
+javaScript:
+
+- show databases ( para mostrar as tabelas existente)
+- use 'nome do banco' (so vai aparecer no show databases se inserir uma connections, no caso algum dado)
+- db.people.insertOne({
+    name: "Ketlyn",
+    lastname: "Jomes",
+    salary: 1000
+}) (para criar um connections, ou seja, inserindo dados. E o insertOne é para um dado)
+-Ir no mongo (localhost:27017 - clicar nos ... copy refresh databases, vai aparecer nosso banco que criamos)
+OBS: Se você mudar qualquer coisa e rodar novamente, vai criar outra connections. E como apagar? no nome da connections, 
+nos ... clicar em drop e colocar o nome da tabela que quer excluir.
+- db.people.insertMany([{
+    name: "Queila",
+    lastname: "Lima",
+    salary: 1234
+},
+{
+    name: "Dom",
+    lastname: "Goncalves",
+    salary: 4321
+
+}])(insertMany para mais de um dado)
