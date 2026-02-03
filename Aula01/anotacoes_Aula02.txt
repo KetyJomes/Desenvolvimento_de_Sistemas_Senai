@@ -76,3 +76,12 @@ db.people.updateOne(
 {_id: ObjectId('6981f33518734102f23a9dbb')},
 { $set:{name:"Alterado"}}
 )
+
+// Alterar todas as pessoas algum atributo da connection 
+
+use('AulaMongo')
+
+db.people.updateMany(
+{ salary: {$gte: 2000}},
+{ $set:{name:"Ketlyn"}}
+)
