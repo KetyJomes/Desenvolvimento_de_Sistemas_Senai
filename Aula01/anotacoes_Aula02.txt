@@ -29,3 +29,15 @@ db.people.find({ name: /^M/ })
 use('AulaMongo')
 
 db.people.find({ lastname: /s$/ }) 
+
+// Dois jeitos de pesquisar a primeira e ultima letra (com o * 
+// ele vai para a ultima letra, 
+// ja sem o * ele encontra a primeira letra na palavra)
+
+use('AulaMongo')
+
+db.people.find({ name: /[^K][n$]/ }) 
+
+use('AulaMongo')
+
+db.people.find({ name: /^K.*n$/ }) 
