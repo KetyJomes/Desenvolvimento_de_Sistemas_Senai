@@ -17,3 +17,15 @@ db.people.find({ name: "Ketlyn"})
 use('AulaMongo')
 
 db.people.find({ name: /H/ })
+
+// ^ começa
+
+use('AulaMongo')
+
+db.people.find({ name: /^M/ }) 
+
+// $ termina
+
+use('AulaMongo')
+
+db.people.find({ lastname: /s$/ }) 
