@@ -59,3 +59,11 @@ db.people.find({ salary: {$gt: 2000}})
 use('AulaMongo')
 
 db.people.find({ salary: {$lt: 2000}}) 
+
+
+13 - Consulta de campo especifico, o 1 (tipo um true) significa que voce quer o nome e sobrenome 
+das pessoas que tem salario maior ou igual a 2000
+
+use('AulaMongo')
+
+db.people.find({ salary: {$gte: 2000}},{name: 1, lastname: 1}) 
