@@ -1,18 +1,88 @@
-03/02/2026
-Aula 01: Introdução Mongo
+use ('AulaMongo')
 
-8 - Como se fosse "Select"
+db.people.insertOne({
+    name: "Ketlyn",
+    lastname: "Jomes",
+    salary: 1000
+}) 
+
+use ('AulaMongo')
+
+db.people.insertMany([{
+    name: "Queila",
+    lastname: "Lima",
+    salary: 1234
+},
+{
+    name: "Dom",
+    lastname: "Goncalves",
+    salary: 4321
+
+}])
+
+use ('AulaMongo')
+
+let pessoa = {
+    name: 'Ketlyn',
+    lastname: "Sofia",
+    salary: 2000
+}
+
+db.people.insertOne(pessoa)
+
+use ('AulaMongo')
+
+const arrpeople = [
+{
+    name: 'Cesar',
+    lastname: 'Stati',
+    salary: 9999
+},
+{
+    name: 'Nicolas',
+    lastname: 'Marques',
+    salary: 2651
+}
+]
+
+db.people.insertMany(arrpeople)
+
+use ('AulaMongo')
+
+db.people.insertOne({
+    name: "Isabella",
+    lastname: "Rodrigues",
+    salary: 614
+
+})
+
+use ('AulaMongo')
+
+db.people.insertMany([{
+    name: "Maria",
+    lastname: "Jomes",
+    salary: 321
+},
+{
+    name: "Héctor",
+    lastname: "Jomes",
+    salary: 412
+
+}])
+
+// "Select" de SQL
+
 use('AulaMongo')
 
 db.people.find()
 
-9 - ({name: "Ketlyn"}) "Wherer do SQL"
+// ({name: "Ketlyn"}) "Wherer do SQL"
 
 use('AulaMongo')
 
 db.people.find({ name: "Ketlyn"})
 
-10 - "Like do SQL"
+// "Like do SQL"
 
 use('AulaMongo')
 
@@ -28,7 +98,7 @@ db.people.find({ name: /^M/ })
 
 use('AulaMongo')
 
-db.people.find({ lastname: /s$/ }) 
+db.people.find({ lastname: /s$/ })
 
 // Dois jeitos de pesquisar a primeira e ultima letra (com o * 
 // ele vai para a ultima letra, 
@@ -42,13 +112,13 @@ use('AulaMongo')
 
 db.people.find({ name: /^K.*n$/ }) 
 
-11 -  Procura mais de um dado
+// Procura mais de um dado
 
 use('AulaMongo')
 
 db.people.find({ $and: [{name: 'Cesar'}, {lastname: 'Stati'}]}) 
 
-12 -  Valores maiores
+// 12 -  Valores maiores
 
 use('AulaMongo')
 
@@ -60,15 +130,15 @@ use('AulaMongo')
 
 db.people.find({ salary: {$lt: 2000}}) 
 
-
-13 - Consulta de campo especifico, o 1 (tipo um true) significa que voce quer o nome e sobrenome 
-das pessoas que tem salario maior ou igual a 2000
+// Consulta de campo especifico, o 1 significa que voce quer o nome e sobrenome 
+// das pessoas que tem salario maior ou igual a 2000
 
 use('AulaMongo')
 
 db.people.find({ salary: {$gte: 2000}},{name: 1, lastname: 1}) 
 
-14 - Alterar algum atributo da connection 
+
+// Alterar algum atributo da connection 
 
 use('AulaMongo')
 
@@ -86,7 +156,7 @@ db.people.updateMany(
 { $set:{name:"Ketlyn"}}
 )
 
-15 - Delete
+// Delete
 
 use('AulaMongo')
 
@@ -104,3 +174,8 @@ use('AulaMongo')
 db.people.deleteOne({
     _id: ObjectId('6981fdc0a69a8bc727652c18')
 })
+
+
+use('AulaMongo')
+
+db.people.deleteMany({name: /K/})
