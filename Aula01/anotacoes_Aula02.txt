@@ -41,3 +41,21 @@ db.people.find({ name: /[^K][n$]/ })
 use('AulaMongo')
 
 db.people.find({ name: /^K.*n$/ }) 
+
+11 -  Procura mais de um dado
+
+use('AulaMongo')
+
+db.people.find({ $and: [{name: 'Cesar'}, {lastname: 'Stati'}]}) 
+
+12 -  Valores maiores
+
+use('AulaMongo')
+
+db.people.find({ salary: {$gt: 2000}}) 
+
+// Valores menores
+
+use('AulaMongo')
+
+db.people.find({ salary: {$lt: 2000}}) 
