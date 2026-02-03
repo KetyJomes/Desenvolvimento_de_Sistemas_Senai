@@ -1,0 +1,19 @@
+03/02/2026
+Aula 01: Introdução Mongo
+
+8 - Como se fosse "Select"
+use('AulaMongo')
+
+db.people.find()
+
+9 - ({name: "Ketlyn"}) "Wherer do SQL"
+
+use('AulaMongo')
+
+db.people.find({ name: "Ketlyn"})
+
+10 - "Like do SQL"
+
+use('AulaMongo')
+
+db.people.find({ name: /H/ })

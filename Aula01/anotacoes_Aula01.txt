@@ -17,15 +17,17 @@ Criamos a conexão
 javaScript:
 
 1 - show databases ( para mostrar as tabelas existente)
-2 - use 'nome do banco' (so vai aparecer no show databases se inserir uma connections, no caso algum dado)
+2 - use ('nome do banco') (so vai aparecer no show databases se inserir uma connections, no caso algum dado)
 3 - db.people.insertOne({
     name: "Ketlyn",
     lastname: "Jomes",
     salary: 1000
 }) (para criar um connections, ou seja, inserindo dados. E o insertOne é para um dado)
 4 -Ir no mongo (localhost:27017 - clicar nos ... copy refresh databases, vai aparecer nosso banco que criamos)
+
 OBS: Se você mudar qualquer coisa e rodar novamente, vai criar outra connections. E como apagar? no nome da connections, 
 nos ... clicar em drop e colocar o nome da tabela que quer excluir.
+
 5 - db.people.insertMany([{
     name: "Queila",
     lastname: "Lima",
@@ -37,14 +39,16 @@ nos ... clicar em drop e colocar o nome da tabela que quer excluir.
     salary: 4321
 
 }])(insertMany para mais de um dado)
-5 - let pessoa = {
+
+6 - let pessoa = {
     name: 'Ketlyn',
     lastname: "Sofia",
     salary: 2000
 }
 
 db.people.insertOne(pessoa) (inserido dados com uma variável)
-6 - const arrpeople = [
+
+7 - const arrpeople = [
 {
     name: 'Cesar',
     lastname: 'Stati',
@@ -58,3 +62,6 @@ db.people.insertOne(pessoa) (inserido dados com uma variável)
 ]
 
 db.people.insertMany(arrpeople) (inserido dados com um array)
+
+OBS: Tem que rodar sempre use ('nome do banco') junto com o insert para os dados irem para o mongo
+
