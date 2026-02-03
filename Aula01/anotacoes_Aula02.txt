@@ -67,3 +67,12 @@ das pessoas que tem salario maior ou igual a 2000
 use('AulaMongo')
 
 db.people.find({ salary: {$gte: 2000}},{name: 1, lastname: 1}) 
+
+14 - Alterar algum atributo da connection 
+
+use('AulaMongo')
+
+db.people.updateOne(
+{_id: ObjectId('6981f33518734102f23a9dbb')},
+{ $set:{name:"Alterado"}}
+)
