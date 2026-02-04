@@ -71,3 +71,12 @@ db.agenda.find({ cidade: /São Paulo/ },{nome: 1 })
 use('Atividade')
 
 db.agenda.find({ dataCadastro: { $gt: new Date("2023-01-01") } })
+
+// Questão 07
+
+use('Atividade')
+
+db.agenda.updateOne(
+  { nome: /Ana Silva/ },
+  { $set: { email: "Alterado@gmail.com", telefone: "986245984" }}
+)
