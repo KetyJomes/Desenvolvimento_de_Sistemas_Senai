@@ -47,3 +47,9 @@ db.people.insertMany([
 use('Atividade')
 
 db.agenda.find({ nome: /^A/ }) 
+
+// Questão 03
+
+use('Atividade')
+
+db.agenda.find({ telefone: /^9/ }) 
