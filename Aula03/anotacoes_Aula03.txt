@@ -11,5 +11,8 @@ Comando personalizado para rodar no terminal:
 
 - package.json
 - "scripts":{
-    "start": "node teste.js" (agora no terminal você vai usar npm run start para rodar)
+    "start": "node teste.js" (agora no terminal você vai usar 
+    npm run start para rodar)
 }
+OBS: Caso eu queira rodar sem personalizar: 
+node nome do arquivo Ex: node teste.js
