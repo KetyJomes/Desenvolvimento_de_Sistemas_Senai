@@ -98,3 +98,9 @@ db.agenda.updateMany(
   { telefone: /^41/ },
   { $set: { cidade: "Curitiba" }}
 )
+
+// Questão 10
+
+use('Atividade')
+
+db.agenda.deleteOne({ telefone: '986245984' })
