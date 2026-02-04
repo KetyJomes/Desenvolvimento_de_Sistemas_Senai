@@ -65,3 +65,9 @@ db.agenda.find({ email: /gmail.com/ })
 use('Atividade')
 
 db.agenda.find({ cidade: /São Paulo/ },{nome: 1 }) 
+
+// Questão 06
+
+use('Atividade')
+
+db.agenda.find({ dataCadastro: { $gt: new Date("2023-01-01") } })
