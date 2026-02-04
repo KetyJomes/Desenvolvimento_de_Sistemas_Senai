@@ -3,11 +3,12 @@ Aula 03: Introdução API´s
 
 Usando Nodjs
 
+1 - Criar arquivos
 - npm init
 - npm init -y
 - npm i (package-lock.json)
 
-Comando personalizado para rodar no terminal:
+2 - Comando personalizado para rodar no terminal:
 
 - package.json
 - "scripts":{
@@ -16,3 +17,33 @@ Comando personalizado para rodar no terminal:
 }
 OBS: Caso eu queira rodar sem personalizar: 
 node nome do arquivo Ex: node teste.js
+
+3 - Instalar typescript
+- npm i typescript @types/node tsx -D
+
+4 - Gera um arquivo de tsc para o js
+- npx tsc --init
+
+- pesquisar tsc config base e entra no git do cara
+- copiar os comandos da nossa versão do node:
+
+npm install --save-dev @tsconfig/node22
+yarn add --dev @tsconfig/node22 (versão do meu node é o 22)
+
+- Trocar o código que está no tsconfig por esse:
+
+{
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "_version": "22.0.0",
+
+  "compilerOptions": {
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
+    "module": "nodenext",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16"
+  }
+}
