@@ -110,3 +110,4 @@ db.agenda.deleteOne({ telefone: '986245984' })
 use('Atividade')
 
 db.agenda.deleteMany({cidade: 'Curitiba'})
+
