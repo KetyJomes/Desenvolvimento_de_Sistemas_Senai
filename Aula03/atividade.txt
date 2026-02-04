@@ -89,3 +89,12 @@ db.agenda.updateOne(
   { nome: /Bruno Costa/ },
   { $set: { cidade: "Pouso Redondo" }}
 )
+
+// Questão 09
+
+use('Atividade')
+
+db.agenda.updateMany(
+  { telefone: /^41/ },
+  { $set: { cidade: "Curitiba" }}
+)
