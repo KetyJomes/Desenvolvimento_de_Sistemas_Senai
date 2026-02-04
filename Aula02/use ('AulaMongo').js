@@ -11,7 +11,7 @@ use ('AulaMongo')
 db.people.insertMany([{
     name: "Queila",
     lastname: "Lima",
-    salary: 1234
+    // salary: 1234
 },
 {
     name: "Dom",
