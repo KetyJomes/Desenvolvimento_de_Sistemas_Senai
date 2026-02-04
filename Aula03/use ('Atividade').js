@@ -1,10 +1,8 @@
-04/02/2026
-
 use ('Atividade')
 
 // Questão 01
 
-db.people.insertMany([
+db.agenda.insertMany([
   {
     nome: "Ana Silva",
     telefone: "999912345",
@@ -47,6 +45,7 @@ db.people.insertMany([
 use('Atividade')
 
 db.agenda.find({ nome: /^A/ }) 
+
 
 // Questão 03
 
