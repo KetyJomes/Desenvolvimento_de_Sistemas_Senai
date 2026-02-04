@@ -80,3 +80,12 @@ db.agenda.updateOne(
   { nome: /Ana Silva/ },
   { $set: { email: "Alterado@gmail.com", telefone: "986245984" }}
 )
+
+// Questão 08
+
+use('Atividade')
+
+db.agenda.updateOne(
+  { nome: /Bruno Costa/ },
+  { $set: { cidade: "Pouso Redondo" }}
+)
