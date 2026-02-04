@@ -59,3 +59,9 @@ db.agenda.find({ telefone: /^9/ })
 use('Atividade')
 
 db.agenda.find({ email: /gmail.com/ }) 
+
+// Questão 05
+
+use('Atividade')
+
+db.agenda.find({ cidade: /São Paulo/ },{nome: 1 }) 
