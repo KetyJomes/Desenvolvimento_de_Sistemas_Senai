@@ -55,3 +55,5 @@ colocar no script do package.json:
 
 rodar no terminal:
 npm i express @types/express
+
+6 - arquivo routes.ts

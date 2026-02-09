@@ -1,32 +1,13 @@
-import express from 'express'
+import express, { response } from 'express'
+import routes from './routes/routes.ts'
 
 const port = 8080
 const app = express()
 
+routes(app)
 
-const pessoa = {
-    name: "Ketlyn",
-    lastname: "Jomes"
-}
-
-// array:
-const pessoas = [
-    {
-        name: "Sofia"
-    },
-    {
-        name: "Ketlyn"
-    }
-
-]
-
-// correto:
-app.get('/objeto', (req, res) => {
-    res.send({pessoas: pessoas})
-})
-// outro exmplo:
-app.get('/direto', (req, res) => {
-    res.send({pessoa})
+app.get('/',(req,res) => {
+    res.status(200).send({response: "API Funcionando!"})
 })
 
 app.listen(port, () => {
