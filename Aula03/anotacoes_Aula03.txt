@@ -47,3 +47,11 @@ yarn add --dev @tsconfig/node22 (versão do meu node é o 22)
     "moduleResolution": "node16"
   }
 }
+
+5 - arquivo server.ts
+
+colocar no script do package.json:
+"dev": "npx tsx watch src/serve.ts"
+
+rodar no terminal:
+npm i express @types/express
