@@ -6,7 +6,7 @@ Usando Nodjs
 1 - Criar arquivos
 - npm init
 - npm init -y
-- npm i (package-lock.json)
+- npm i 
 
 2 - Comando personalizado para rodar no terminal:
 
@@ -45,6 +45,8 @@ yarn add --dev @tsconfig/node22 (versão do meu node é o 22)
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node16"
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
   }
 }
 
@@ -56,4 +58,15 @@ colocar no script do package.json:
 rodar no terminal:
 npm i express @types/express
 
-6 - arquivo routes.ts
+6 - Criar arquivo src e dentro dele:
+uma pasta routes e dentro dela:
+arquivo routes.ts e o arquivo que voce coloca o post, get e put.
+
+POSTMAN
+
+1 - do lado do meu nome workspace clicar em new - http
+2 - para ver se esta funcionando colocar do lado do get localhost:8080
+(8080 é a porta que esta em nosso arquivo server.ts)
+3 - para registrar - localhost:8080/api/é o que esta na routes.ts/é o que esta no outro arquivo post 
+
+
