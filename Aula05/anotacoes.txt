@@ -41,3 +41,26 @@ E colocar:
 
 7 - rodar a API:
     npm run dev
+
+8 - Dentro de src:
+Criar uma pasta models e dentro dela um arquivo person.ts
+
+9 - Dentro do arquivo person:
+import mongoose, { Schema, Document } from 'mongoose';
+
+interface IPerson extends Document {
+name: string;
+age: number;
+}
+
+const personSchema: Schema = new Schema({
+name: { type: String, required: true },
+age: { type: Number, required: true },
+});
+
+const Person = mongoose.model<IPerson>('Person', personSchema);
+
+export default Person;
+
+10 - Dentro de usuario.ts, importar:
+import Person from '../models/Person.ts'
