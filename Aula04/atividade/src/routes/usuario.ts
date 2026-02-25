@@ -89,5 +89,53 @@ router
     
         return res.status(200).send({response: `Atualizando o uruário ${id} -> ${nome} ${email} ${tipo} ${ativo}`})
     })
+    
+    .patch('/atualizando/:id',(req: Request,res: Response) => {
+        const {id} = req.params
+        const convertedId = Number(id)
+        const {email, ativo} = req.body
+
+        const emailDuplicado = usuario.find((u) => u.email == email)
+        
+
+        if(emailDuplicado){
+        return res.status(404).send({ response: "Email duplicado!"})
+        }
+
+        const existUser = usuario.find((u) => u.id == convertedId)
+
+        if(existUser){
+            const existsEmail = existUser.email
+                if(existsEmail == email){
+                    return res.status(500).send("Este email é o mesmo que o atual. Para atualizar, digite um novo")
+                }
+
+            existUser.email = email
+            existUser.ativo = ativo
+            
+        }
+    
+        return res.status(200).send({response: `Atualizando o uruário ${id} -> ${email} ${ativo}`})
+
+
+    })
+    .delete('/deletando/:id',(req: Request,res: Response) => {
+        const {id} = req.params
+
+        const convertedId = Number(id)
+
+        const existe= usuario.find((u) => u.id == convertedId)
+        
+
+        if(!existe){
+            return res.status(404).send({ response: "Não encontrado!"})
+        }
+        
+        usuario.splice(usuario.indexOf(existe), 1)
+    
+        return res.status(200).send({massage: `Usuario ${id} deletado com sucesso!`})
+
+
+    })
 
 export default router;
