@@ -1,0 +1,43 @@
+25/02
+
+Conectando o Mongo na nossa API :
+
+1 - instalando:
+    npm i mongoose config
+    npm i --save-dev @types/config
+
+2 - criar uma pasta fora de src chamada config
+
+3 - Dentro da pasta config criar um arquivo default.json e dentro dele colocar:
+{
+    "db": "mongodb://localhost:27017"
+}
+OBS: esse localhost é o do seu mongodb
+
+4 - criar outr pasta na pasta raiz chamada database
+
+5 - Dentro dela criar um arquivo database.ts e colocar esse código:
+
+import mongoose from 'mongoose';
+import config from 'config'
+
+const connectDB = async () => {
+try {
+const db: string = config.get('db');
+await mongoose.connect(db);
+console.log('MongoDB Connected');
+} catch (error) {
+console.error('MongoDB Connection Failed', error);
+process.exit(1);
+}
+};
+
+export default connectDB;
+
+6 - no serve.ts, importar:
+    import connectDB from '../database/database.ts'
+E colocar:
+    connectDB();
+
+7 - rodar a API:
+    npm run dev
