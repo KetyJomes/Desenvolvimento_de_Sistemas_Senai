@@ -1,0 +1,20 @@
+09/03/2026 
+
+Juntando com o frontend
+
+1 - npm create vite@latest 
+
+2 - npm i axios
+npm i react-router-dom
+
+3 - dentro de src tem App.tx, dentro importar "import axios from 'axios'"
+OBS: TUDO ISSO ACIMA DENTRO DA PASTA DO FRONT
+
+4 - npm i cors
+OBS: DENTRO DA PASTA DO BACK
+
+5 - colocar no serve.ts:
+app.use(cors({
+    origin: '*'
+}))
+OBS: DENTRO DA PASTA DO BACK
