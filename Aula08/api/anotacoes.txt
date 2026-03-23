@@ -1,0 +1,55 @@
+CONFIGURANDO O PROJETO
+npm init -y
+    - cria o package (arquivo de configuração e dependências)
+
+Configurar:
+Incluir no package.json para facilitar o desenvolvimento da API:
+    "type": "module"
+
+No terminal, entre na pasta e inclua o seguinte comando para configurar nosso projeto para aceitar o uso de TS.:
+    npm i typescript @types/node tsx -D
+Agora podemos rodar o seguinte comando, para criar o arquivo de configuração do typescript para gerenciá-lo.:
+    npx tsc --init
+Substitua o código do tsconfig.json pelo código da versão do node correta. Para ver a versão correta, no cmd: node -v. Depois no navegador: https://github.com/tsconfig/bases?tab=readme-ov-file
+Adicione na tsconfig:
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+Colocar no package.json:
+    "dev": "npx tsx watch src/server.ts"
+No terminal coloque:
+    npm i express @types/express
+
+
+ESTRUTURANDO O PROJETO
+Crie o arquivo ".gitignore" e coloque o código:
+    node_modules
+Cria a pasta "src"
+Dentro da pasta src criar o arquivo server.ts
+Crie 4 pastas dentro de src: controllers, middlewares, models, routes
+Na pasta controllers crie o arquivo "personController.ts"
+Na pasta middlewares crie o arquivo "personMiddlewares.ts"
+Na pasta models crie o arquivo "Person.ts"
+Na pasta routes crie os arquivos "person.ts" e "routes.ts"
+
+INSTALAÇÃO DO MONGOOSE
+npm i mongoose @types/mongoose
+Crie a pasta "config" e crie o arquivo "default.json" e coloque o código:
+    {
+    "db": "mongodb://localhost:27017"
+    }
+Crie a pasta "database" e crie o arquivo "database.ts" e coloque o código:
+    import mongoose from 'mongoose';
+    import config from 'config'
+    const connectDB = async () => {
+    try {
+    const db: string = config.get('db');
+    await mongoose.connect(db);
+    console.log('MongoDB Connected');
+    } catch (error) {
+    console.error('MongoDB Connection Failed', error);
+    process.exit(1);
+    }
+    };
+    export default connectDB;
+No terminal rode o comando:
+    npm i config

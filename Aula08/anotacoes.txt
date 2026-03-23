@@ -1,0 +1,15 @@
+Requisições HTTP:
+- POST -> {body}
+- GET -> {params}
+- PUT -> {body, params}
+- DEL -> {params}
+
+Pastas/Estrutura:
+-> src
+    - middlewares -> valida a requisição
+    - routes -> caminhos da API
+    - config -> regra de negócio
+    - database -> conexão com DB
+    - models -> estrutura dos dados
+    - server.ts -> inicializa a API
+
