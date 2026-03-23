@@ -17,14 +17,14 @@ function List() {
 
   const navigate = useNavigate() 
 
-  const handleNavigateHome = () => {
-    navigate('/')
+  const handleNavigateProduct = () => {
+    navigate('/Product')
   }
 
   return (
     <>
-    <div style={{height: '100vh', width: '100vw', backgroundColor: 'Lavender', justifyContent: 'center', alignItems: 'center'}}>
-      <h1>Página Lista</h1>
+    <div style={{height: '100vh', width: '100vw', backgroundColor: '#A3B18C', justifyContent: 'center', alignItems: 'center'}}>
+      <h1 style={{ color: '#6A743E', textAlign: 'center'}}>Página Lista</h1>
       {
         produts.map((produt) => {
           return(
@@ -35,10 +35,25 @@ function List() {
         )})
       }
       <br></br>
-      <button onClick={handleNavigateHome} style={{height: '50px', width: '100px', backgroundColor: 'MediumOrchid', color: 'white', borderRadius: '10px', border: 0}}>Voltar</button>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+          
+          <button onClick={handleNavigateProduct} style={buttonStyle}>
+            Voltar
+          </button>
+
+        </div>
     </div>
     </>
   )
+}
+
+const buttonStyle = {
+  height: '50px',
+  width: '200px', 
+  backgroundColor: '#6A743E',
+  color: 'white',
+  borderRadius: '10px',
+  border: 0
 }
 
 export default List
