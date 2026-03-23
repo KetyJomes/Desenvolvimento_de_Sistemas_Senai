@@ -53,3 +53,15 @@ Crie a pasta "database" e crie o arquivo "database.ts" e coloque o código:
     export default connectDB;
 No terminal rode o comando:
     npm i config
+
+
+npm i dotenv crypto-js jsonwebtoken na pasta do back
+
+na pasta de routes criar um arquivo auth.js e 
+na controllers um arquivo authController
+
+se o jsonwebtoken não funcionar rodar esse comando: 
+npm i --save-dev @types/jsonwebtoken
+
+se o CryptoJS não funcionar rodar esse comando:
+npm i --save-dev @types/crypto-js
