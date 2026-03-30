@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Swal from 'sweetalert2'
 
 function Login() {
-  const [login, setLogin] = useState([])
+  const [email, setEmail] = useState([])
+  const [password, setPassword] = useState([])
 
   const navigate = useNavigate()
 
@@ -24,8 +26,28 @@ function Login() {
     navigate('/')
   }
 
-  const handleNavigateProduct = () => {
-    navigate('/Product')
+   const handleLogin = async () => {
+    try{
+      const response = await axios.post('http://localhost:8080/api/auth/login', {email,password})
+      console.log(response.data)
+     Swal.fire({
+        title: "Sucesso!",
+        text: "Bem-vindo!",
+        icon: "Success"
+      });
+      return navigate('/Product')
+    }
+    catch{
+      Swal.fire({
+        title: "Erro!",
+        text: "Usuário não encontrado!",
+        icon: "Success"
+      });
+
+    }
+    setEmail("")
+    setPassword("")
+
   }
 
   return (
@@ -37,15 +59,15 @@ function Login() {
 
         <div style={{ marginBottom: '20px' }}>
           <span><b>Email:</b></span><br />
-          <input placeholder='Digite seu email:' style={inputStyle} /><br /><br />
+          <input onChange={(e) => setEmail(e.target.value)} placeholder='Digite seu email:' style={inputStyle} /><br /><br />
 
           <span><b>Senha:</b></span><br />
-          <input type="password" placeholder='Digite sua senha:' style={inputStyle} /><br /><br />
+          <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='Digite sua senha:' style={inputStyle} /><br /><br />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           
-          <button onClick={handleNavigateProduct} style={buttonStyle}>
+          <button onClick={handleLogin} style={buttonStyle}>
             Entrar
           </button>
 

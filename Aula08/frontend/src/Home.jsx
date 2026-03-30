@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 function Register() {
   const [name, setName] = useState("")
@@ -16,7 +17,11 @@ function Register() {
   const handleRegister = async () => {
     try{
       await axios.post('http://localhost:8080/api/auth/register', {name,email,password})
-
+      return Swal.fire({
+        title: "Sucesso!",
+        text: "Usuário cadastrado com sucesso!",
+        icon: "Success"
+      });
     }
     catch{
       Swal.fire({
