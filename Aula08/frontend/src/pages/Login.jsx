@@ -29,7 +29,8 @@ function Login() {
    const handleLogin = async () => {
     try{
       const response = await axios.post('http://localhost:8080/api/auth/login', {email,password})
-      console.log(response.data)
+      sessionStorage.setItem('token', response.data.token)
+
      Swal.fire({
         title: "Sucesso!",
         text: "Bem-vindo!",
