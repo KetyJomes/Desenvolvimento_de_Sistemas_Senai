@@ -1,31 +1,56 @@
+import axios from "axios"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function Register() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
   const navigate = useNavigate()
 
   const handleNavigateLogin = () => {
     navigate('/login')
   }
 
+  const handleRegister = async () => {
+    try{
+      await axios.post('http://localhost:8080/api/auth/register', {name,email,password})
+
+    }
+    catch{
+      Swal.fire({
+        title: "Erro!",
+        text: "Não foi possível regstrar o usuário!",
+        icon: "Success"
+      });
+
+    }
+    setName("")
+    setEmail("")
+    setPassword("")
+
+  }
+
   return (
     <div style={{ height: '100vh', width: '100vw', backgroundColor: '#A3B18C', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ backgroundColor: '#F1F4E6', height: '450px', width: '350px', borderRadius: '15px', padding: '20px' }}>
         
-        <h1 style={{ color: '#6A743E', textAlign: 'center'}}>Cadastro</h1>
+        <h1 style={{ color: '#6A743E', textAlign: 'center', }}>Cadastro</h1>
 
         <div style={{ marginBottom: '20px' }}>
           <span><b>Nome:</b></span><br />
-          <input placeholder='Digite seu nome:' style={inputStyle} /><br /><br />
+          <input onChange={(e) => setName(e.target.value)} placeholder='Digite seu nome:' style={inputStyle} /><br /><br />
 
           <span><b>Email:</b></span><br />
-          <input placeholder='Digite seu email:' style={inputStyle} /><br /><br />
+          <input onChange={(e) => setEmail(e.target.value)} placeholder='Digite seu email:' style={inputStyle} /><br /><br />
 
           <span><b>Senha:</b></span><br />
-          <input type="password" placeholder='Digite sua senha:' style={inputStyle} /><br /><br />
+          <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='Digite sua senha:' style={inputStyle} /><br /><br />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <button style={buttonStyle}>
+          <button onClick={handleRegister} style={buttonStyle}>
             Cadastrar
           </button>
 
