@@ -7,6 +7,9 @@ import CryptoJS from 'crypto-js'
 dotenv.config();
 
 class AuthController {
+static product(arg0: string, product: any) {
+    throw new Error('Method not implemented.');
+}
 static async register(req: Request, res: Response): Promise<any> {
     const { name, email, password } = req.body;
     // console.log(password)

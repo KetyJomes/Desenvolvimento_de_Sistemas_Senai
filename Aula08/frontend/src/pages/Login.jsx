@@ -56,7 +56,9 @@ function Login() {
       
       <div style={{ backgroundColor: '#F1F4E6', height: '450px', width: '350px', borderRadius: '15px', padding: '20px' }}>
         
-        <h1 style={{ color: '#6A743E', textAlign: 'center'}}>Login</h1>
+        <h1 style={{ color: '#6A743E', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '28px' }}>
+        Login
+        </h1>
 
         <div style={{ marginBottom: '20px' }}>
           <span><b>Email:</b></span><br />

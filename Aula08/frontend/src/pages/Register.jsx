@@ -26,7 +26,7 @@ function Register() {
     catch{
       Swal.fire({
         title: "Erro!",
-        text: "Não foi possível regstrar o usuário!",
+        text: "Não foi possível registrar o usuário!",
         icon: "Success"
       });
 
@@ -41,7 +41,9 @@ function Register() {
     <div style={{ height: '100vh', width: '100vw', backgroundColor: '#A3B18C', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div style={{ backgroundColor: '#F1F4E6', height: '450px', width: '350px', borderRadius: '15px', padding: '20px' }}>
         
-        <h1 style={{ color: '#6A743E', textAlign: 'center', }}>Cadastro</h1>
+        <h1 style={{ color: '#6A743E', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '28px' }}>
+          Cadastro
+        </h1>
 
         <div style={{ marginBottom: '20px' }}>
           <span><b>Nome:</b></span><br />

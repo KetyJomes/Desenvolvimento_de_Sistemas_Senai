@@ -1,13 +1,14 @@
 import { Request, Response } from "express";
 import Product from "../models/Product.ts";
 
+
 class ProductController {
     static async getProducts(req: Request, res: Response) {
         const products = await Product.find()
         return res.status(200).send({ response: products })
     }
 
-    static async postProducts(req: Request, res: Response) {
+    static async product(req: Request, res: Response) {
         const { name, description, price, stock, category, createdAt } = req.body
         const products = new Product({ name, description, price, stock, category, createdAt })
         await products.save()
