@@ -23,26 +23,37 @@ function List() {
 
   return (
     <>
-    <div style={{height: '100vh', width: '100vw', backgroundColor: '#A3B18C', justifyContent: 'center', alignItems: 'center'}}>
-      <h1 style={{ color: '#6A743E', textAlign: 'center'}}>Página Lista</h1>
-      {
-        produts.map((produt) => {
-          return(
-          <div key={produt._id}>
-            <span style={{fontWeight: 'bold'}}>Produto: </span><span>{produt.name}</span><br></br>
-            <span style={{fontWeight: 'bold'}}>Preço: </span><span>R${produt.price}</span>
-          </div>
-        )})
-      }
-      <br></br>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+<div style={{ height: '100vh', width: '100vw', backgroundColor: '#A3B18C', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+    <h1 style={{ color: '#6A743E', textAlign: 'center', fontFamily: 'Verdana, Geneva, sans-serif', marginBottom: '20px', fontSize: '2rem' }}>
+      Lista de Produtos
+    </h1>
+  
+  {
+    produts.map((produt) => {
+      return (
+        <div key={produt._id} style={{ backgroundColor: 'white', padding: '15px', borderRadius: '10px', marginBottom: '15px', width: '30%', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
           
-          <button onClick={handleNavigateProduct} style={buttonStyle}>
-            Voltar
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+            <div style={{ fontWeight: 'bold', color: '#6A743E' }}>Produto: </div>
+            <div style={{ fontWeight: 'normal', color: '#333', marginLeft: '5px' }}>{produt.name}</div>
 
+            <div style={{ fontWeight: 'bold', color: '#6A743E', marginLeft: '20px' }}>Descrição: </div>
+            <div style={{ fontWeight: 'normal', color: '#333', marginLeft: '5px' }}>{produt.description}</div>
+
+            <div style={{ fontWeight: 'bold', color: '#6A743E', marginLeft: '20px' }}>Preço: </div>
+            <div style={{ fontWeight: 'normal', color: '#333', marginLeft: '5px' }}>R${produt.price}</div>
+          </div>
         </div>
-    </div>
+      )
+    })
+  }
+
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+    <button onClick={handleNavigateProduct} style={buttonStyle}>
+      Voltar
+    </button>
+  </div>
+</div>
     </>
   )
 }
