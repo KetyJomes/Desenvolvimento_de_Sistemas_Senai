@@ -8,6 +8,13 @@ class ProductController {
         return res.status(200).send({ response: products })
     }
 
+    static async getProductById(req: Request, res: Response) {
+        const {id} = req.params
+        const product = await Product.findById(id)
+        return res.status(200).send({ product: product })
+    }
+
+
     static async product(req: Request, res: Response) {
         const { name, description, price, stock, category, createdAt } = req.body
         const products = new Product({ name, description, price, stock, category, createdAt })

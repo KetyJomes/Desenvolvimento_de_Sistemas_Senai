@@ -6,6 +6,7 @@ const router: Router = express.Router();
 router
     .post('/cadastro', validateRegister, ProductController.product)
     .get('/products', ProductController.getProducts)
+    .get('/get/:id', ProductController.getProductById)
     .put('/update/:id', ProductController.putProducts)
     .delete('/delete/:id', ProductController.deleteProducts)
 
