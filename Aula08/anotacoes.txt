@@ -3,7 +3,7 @@ Requisições HTTP:
 - GET -> {params}
 - PUT -> {body, params}
 - DEL -> {params}
-
+ 
 Pastas/Estrutura:
 -> src
     - middlewares -> valida a requisição

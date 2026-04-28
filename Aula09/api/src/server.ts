@@ -1,0 +1,24 @@
+import express, { response } from 'express'
+import { connect } from 'node:http2'
+import routes from './routes/routes.ts'
+import connectDB from '../database/database.ts'
+import cors from 'cors'
+
+const port = 8080
+const app = express()
+
+app.use(cors({
+    origin: '*'
+}))
+
+connectDB();
+
+routes(app)
+
+app.get('/',(req,res) => {
+    res.status(200).send({response: "API Funcionando!"})
+})
+
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`)
+})
